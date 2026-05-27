@@ -1,4 +1,4 @@
-# 🧪 Projeto-Testes-E2E
+# 🧪 Projeto-Testes-E2E (WIP)
 
 Projeto desenvolvido para estudos e demonstrações práticas de automação de testes em uma aplicação Flask simples.
 
@@ -10,9 +10,9 @@ O ambiente foi estruturado para separar claramente:
 
 Cada ferramenta de automação possui sua própria documentação e configuração independente e estará dentro de sua pasta. As ferramentas de testes utilizadas serão:
 
-- Cypress
-- Playwright
-- Selenium
+- Cypress - COmpleto
+- Playwright - Em andamento
+- Selenium - Não iniciado
 
 ---
 
