@@ -1,0 +1,13 @@
+{
+  "name": "flask-e2e-tests",
+  "version": "1.0.0",
+  "description": "Projeto de testes E2E utilizando Cypress em uma aplicação Flask.",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.7.0"
+  }
+}

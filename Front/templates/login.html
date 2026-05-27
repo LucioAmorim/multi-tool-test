@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Bem-vindo</h2>
+        <p>Faça login para continuar</p>
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                data-testid="login-email"
+                placeholder="Email"
+                required
+            />
+
+            <input
+                type="password"
+                data-testid="login-password"
+                placeholder="Senha"
+                required
+            />
+
+            <button type="submit" data-testid="login-submit">
+                Entrar
+            </button>
+
+        </form>
+
+        <div class="footer">
+            <a href="#" id="recover-password" data-testid="recover-password">
+                Recuperar senha
+            </a>
+        </div>
+
+        <p class="error" data-testid="login-error"></p>
+
+    </div>
+
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const email = document.querySelector('[data-testid="login-email"]').value;
+    const password = document.querySelector('[data-testid="login-password"]').value;
+
+    const errorEl = document.querySelector('[data-testid="login-error"]');
+    errorEl.innerText = "";
+
+    try {
+        const response = await fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            localStorage.setItem("user", data.user);
+            window.location.href = "/home";
+        } else {
+            errorEl.innerText = data.error;
+        }
+
+    } catch (err) {
+        errorEl.innerText = "Erro de conexão com o servidor";
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "sucesso": {
+    "email": "admin@email.com",
+    "password": "admin"
+  },
+  "falha": {
+    "email": "usuario_invalido@email.com",
+    "password": "senhaerrada"
+  }
+}
